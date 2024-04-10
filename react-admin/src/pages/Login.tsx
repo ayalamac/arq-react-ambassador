@@ -1,4 +1,4 @@
-import React, {SyntheticEvent, useState} from 'react';
+import {SyntheticEvent, useState} from 'react';
 import '../Login.css';
 import axios from 'axios';
 import {Redirect} from "react-router-dom";
@@ -24,8 +24,8 @@ const Login = () => {
     }
 
     return (
-        <main className="form-signin">
-            <form onSubmit={submit}>
+        <main className="form-signin d-grid">
+            <form onSubmit={submit} className="placeitems">
                 <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
                 <div className="form-floating">

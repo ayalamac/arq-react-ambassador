@@ -30,13 +30,14 @@ const Login = () => {
 
                 <div className="form-floating">
                     <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"
-                           onChange={e => setEmail(e.target.value)}
+                        onChange={e => setEmail(e.target.value)}
                     />
                     <label htmlFor="floatingInput">Email address</label>
                 </div>
                 <div className="form-floating">
-                    <input type="password" className="form-control" id="floatingPassword" placeholder="Password"
-                           onChange={e => setPassword(e.target.value)}
+                    <input
+                        type="password" className="form-control" id="floatingPassword" placeholder="Password"
+                        onChange={e => setPassword(e.target.value)}
                     />
                     <label htmlFor="floatingPassword">Password</label>
                 </div>

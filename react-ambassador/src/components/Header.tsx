@@ -22,7 +22,7 @@ const Header = (props: { user: User }) => {
     if (!props.user?.id) {
         buttons = (
             <p>
-                <Link to={'/login'} className="btn btn-primary my-2">Login</Link>
+                <Link to={'/login'} className="btn btn-primary my-2 mr-3">Login</Link>
                 <Link to={'/register'} className="btn btn-secondary my-2">Register</Link>
             </p>
         )
