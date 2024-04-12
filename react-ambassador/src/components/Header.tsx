@@ -22,18 +22,18 @@ const Header = (props: { user: User }) => {
     if (!props.user?.id) {
         buttons = (
             <p>
-                <Link to={'/login'} className="btn btn-primary my-2 mr-3">Login</Link>
-                <Link to={'/register'} className="btn btn-secondary my-2">Register</Link>
+            <Link to={'/login'} className="btn btn-primary border-white bg-transparent my-2 mr-3" style={{display: 'inline-block', marginRight: '10px'}}>Sign in</Link>
+            <Link to={'/register'} className="btn btn-primary my-2" style={{display: 'inline-block'}}>Create account</Link>
             </p>
         )
     }
 
     return (
-        <section className="py-5 text-center container">
+        <section className="py-5 text-center container bg-dark">
             <div className="row py-lg-5">
-                <div className="col-lg-6 col-md-8 mx-auto">
+                <div className="col-lg-6 col-md-8 mx-auto text-white">
                     <h1 className="fw-light">{title}</h1>
-                    <p className="lead text-muted">{description}</p>
+                    <p className="lead text-white">{description}</p>
                     {buttons}
                 </div>
             </div>

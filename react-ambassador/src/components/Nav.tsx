@@ -15,20 +15,18 @@ const Nav = (props: any) => {
 
     if (props.user?.id) {
         menu = (
-            <div className="col-md-3 text-end">
+            <div className="col-lg-6 text-end">
                 <Link to={'/rankings'} className="btn me-2">Rankings</Link>
                 <Link to={'/stats'} className="btn me-2">Stats</Link>
-                <a href="#" className="btn btn-outline-primary me-2"
-                   onClick={logout}
-                >Logout</a>
+                <a href="#" className="btn btn-outline-primary me-2" onClick={logout}>Logout</a>
                 <Link to={'/profile'} className="btn btn-primary">{props.user.first_name} {props.user.last_name}</Link>
             </div>
         )
     } else {
         menu = (
-            <div className="col-md-3 text-end">
-                <Link to={'/login'} className="btn btn-outline-primary me-2">Login</Link>
-                <Link to={'/register'} className="btn btn-primary">Sign-up</Link>
+            <div className="col-lg-6 text-end">
+                <Link to={'/login'} className="btn btn-outline-primary me-2">Sign in</Link>
+                <Link to={'/register'} className="btn btn-primary">Create account</Link>
             </div>
         )
     }
@@ -36,16 +34,14 @@ const Nav = (props: any) => {
     return (
         <div className="container">
             <header
-                className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
 
                 <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li>
-                        <NavLink to='/' activeClassName='link-dark' exact
-                                 className="nav-link px-2 link-secondary">Frontend</NavLink>
+                        <NavLink to='/' activeClassName='link-dark' exact className="nav-link px-2 link-secondary">Frontend</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'/backend'} activeClassName='link-dark'
-                                 className="nav-link px-2 link-secondary ">Backend</NavLink>
+                        <NavLink to={'/backend'} activeClassName='link-dark' className="nav-link px-2 link-secondary ">Backend</NavLink>
                     </li>
                 </ul>
 

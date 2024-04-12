@@ -89,11 +89,11 @@ export default function Home() {
                 </div>
 
                 <div className="row g-5">
-                    <div className="col-md-5 col-lg-4 order-md-last">
+                    <div className="col-md-9 col-lg-8 order-md-first">
                         <h4 className="d-flex justify-content-between align-items-center mb-3">
                             <span className="text-primary">Products</span>
                         </h4>
-                        <ul className="list-group mb-3">
+                        <ul className="list-group mb-8">
                             {products.map(product => {
                                 return (
                                     <div key={product.id}>
@@ -125,7 +125,7 @@ export default function Home() {
                         </ul>
 
                     </div>
-                    <div className="col-md-7 col-lg-8">
+                    <div className="col-md-3 col-lg-4">
                         <h4 className="mb-3">Personal Info</h4>
                         <form className="needs-validation" onSubmit={submit}>
                             <div className="row g-3">
@@ -181,7 +181,6 @@ export default function Home() {
                                            onChange={e => setZip(e.target.value)}/>
                                 </div>
                             </div>
-
 
                             <hr className="my-4"/>
 

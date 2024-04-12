@@ -57,7 +57,7 @@ const Products = (props: {
             setNotify({
                 show: true,
                 error: false,
-                message: `Link generated: http://localhost:5000/${data.code}`
+                message: `http://localhost:5000/${data.code}`
             });
         } catch (e) {
             setNotify({
@@ -91,7 +91,7 @@ const Products = (props: {
     if (selected.length > 0) {
         generateButton = (
             <div className="input-group-append">
-                <button className="btn btn-info" onClick={generate}>Generate Link</button>
+                <button className="btn btn-info btn-small" onClick={generate}>Generate Link</button>
             </div>
         )
     }
@@ -99,8 +99,8 @@ const Products = (props: {
     if (notify.show) {
         info = (
             <div className="col-md-12 mb-4">
-                <div className={notify.error ? "alert alert-danger" : "alert alert-info"} role="alert">
-                    {notify.message}
+                <div className={notify.error ? "alert alert-danger" : "alert alert-dark"} role="alert">
+                    Link generated: <a style={{fontWeight: 'bold'}} target="_blank" href={`${notify.message}`} rel="noreferrer">{notify.message}</a>
                 </div>
             </div>
         )
@@ -112,12 +112,13 @@ const Products = (props: {
 
             <div className="col-md-12 mb-4 input-group">
                 <input type="text" className="form-control" placeholder="Search"
-                       onChange={e => search(e.target.value)}
-                />
+                       onChange={e => search(e.target.value)}/>
+
                 {generateButton}
-                <div className="input-group-append">
-                    <select className="form-select" onChange={e => sort(e.target.value)}>
-                        <option>Select</option>
+
+                <div className="input-group-append rounded-0 rounded-right">
+                    <select className="form-select " onChange={e => sort(e.target.value)}>
+                        <option>Sort order</option>
                         <option value="asc">Price Ascending</option>
                         <option value="desc">Price Descending</option>
                     </select>
@@ -130,10 +131,11 @@ const Products = (props: {
                         <div className="col" key={product.id} onClick={() => select(product.id)}>
                             <div
                                 className={selected.some(s => s === product.id) ? "card shadow-sm selected" : "card shadow-sm"}>
-                                <img src={product.image} height={200}/>
+                                <img src={product.image} height={300} alt={product.title}/>
 
                                 <div className="card-body">
-                                    <p className="card-text">{product.title}</p>
+                                    <p className="card-text text-capitalize">{product.title}</p>
+                                    <p className="card-text">{product.description}</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <small className="text-muted">${product.price}</small>
                                     </div>
